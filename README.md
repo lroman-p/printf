@@ -1,2 +1,2 @@
 # printf
-# Segundo proyecto del common core de 42 
+ Segundo proyecto del common core de 42.
