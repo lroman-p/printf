@@ -15,16 +15,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_printf(const char *str, ...); 	**//Declaracion de la funcion ft_printf//**
+int	ft_printf(const char *str, ...); 	
 
-int ft_print_char (int character)		**//dedfinicion de la funcion print_char//**
+int ft_print_char (int character)		
 {
-	return (write(1, &character, sizeof(char)));	**//escribe el caracter en la salida estandar//**
-}
-int	main (void)
-{
-	char character = 'A';		**//declara una variable de tipo char llamada character y le asigna el valor 'A'//**
-
-	ft_print_char(character);	**//llama a la funcion print_char con el caracter almacenado en la variable character//** 
-	return(0);
+	return (write(1, &character, sizeof(char)));	
 }
