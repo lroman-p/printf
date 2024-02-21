@@ -11,24 +11,24 @@
 # **************************************************************************** #
 
 SCRS	=	ft_printf.c\	
-		ft_print_char.c ft_print_nbr.c ft_print_unsigned.c ft_print_string.c\    ***//Define una lista de archivos fuentes//***
+		ft_print_char.c ft_print_nbr.c ft_print_unsigned.c ft_print_string.c\    
 		ft_print_hexadecimal.c	ft_print_pointers.c
 
-OBJS	=	$(SCRD:.c=.o)			**//define una lista de archivos objeto a partir de los archivos fuentes//**
+OBJS	=	$(SCRD:.c=.o)			
 
-NAME	=	libftprintf.a			**//define el nombre del archivo estatico que se generara//**
+NAME	=	libftprintf.a			
 
-CC	=	gcc				**//define el compilador a utilizar//**
-RM	=	rm-f				**//define el comando para eliminar archivos //**
-CFLAGS	=	-Wall -Wextra -Werror		**//establece banderas de compilacion//**
+CC	=	gcc				
+RM	=	rm-f				
+CFLAGS	=	-Wall -Wextra -Werror		
 
-ALL	=	$(NAME)				**//define una lista de todos los objetivos a generar//**
-$(NAME):$(OBJS)					**//regla para generar el archivo objeto//**
-	ar	rcs	$(NAME)	$(OBJS)		**//accion para crear el archivo estatico//**
-clean:						**//objetivo para eliminar archivos objeto//**
-	$(RM) $(OBJS)				**//objetivo para eliminar archivos objeto//**
-fclean:	clean					**//objetivo para eliminar archivos generados//**
-	$(RM) $(NAME)				**//accion para eliminar el archivo generados//**
-re:	fclean	$(NAME)				**//objetivo para reconstruir el proyecto//**
+ALL	=	$(NAME)				
+$(NAME):$(OBJS)					
+	ar	rcs	$(NAME)	$(OBJS)		
+clean:						
+	$(RM) $(OBJS)				
+fclean:	clean					
+	$(RM) $(NAME)				
+re:	fclean	$(NAME)				
 
-.PHONY: all	clean fclean re			**//indica que son objetivos especiales y no archivos//**
+.PHONY: all	clean fclean re			
