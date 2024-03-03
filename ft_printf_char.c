@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lroman-p <lroman-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 12:40:36 by lroman-p          #+#    #+#             */
-/*   Updated: 2024/03/03 13:24:34 by lroman-p         ###   ########.fr       */
+/*   Created: 2024/02/17 12:06:59 by lroman-p          #+#    #+#             */
+/*   Updated: 2024/03/03 13:27:17 by lroman-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stddef.h>
-
-int	ft_printf_char(char c);
 int	ft_printf(const char *str, ...);
-int	ft_printf_string(char *str);
-int	ft_printf_nbr(int n);
-int	ft_printf_unsigned(unsigned int n);
-int	ft_printf_hexadecimal(unsigned int num, const char word);
-int	ft_printf_pointer(unsigned long long ptr);
 
-#endif
+int	ft_printf_char(char c)
+{
+	int	character;
+
+	character = write(1, &c, 1);
+	return (character);
+}
