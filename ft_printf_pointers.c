@@ -12,25 +12,6 @@
 
 #include "ft_printf.h"
 
-int		ft_length_pointer( unsigned long long ptr);
-void	ft_convert_pointer(unsigned long long ptr);
-
-int	ft_printf_pointer(unsigned long long ptr)
-{
-	int	size;
-
-	size = 0;
-	size += ft_printf_string("0x");
-	if (ptr == 0)
-		size += ft_printf_char('0');
-	else
-	{
-		ft_convert_pointer(ptr);
-		size += ft_length_pointer(ptr);
-	}
-	return (size);
-}
-
 int	ft_length_pointer(unsigned long long ptr)
 {
 	int	len;
@@ -58,4 +39,20 @@ void	ft_convert_pointer(unsigned long long ptr)
 		else
 			ft_printf_char(ptr -10 + 'a');
 	}
+}
+
+int	ft_printf_pointer(unsigned long long ptr)
+{
+	int	size;
+
+	size = 0;
+	size += ft_printf_string("0x");
+	if (ptr == 0)
+		size += ft_printf_char('0');
+	else
+	{
+		ft_convert_pointer(ptr);
+		size += ft_length_pointer(ptr);
+	}
+	return (size);
 }
